@@ -6,7 +6,7 @@
 
 A powerful interactive debugger for Robot Framework with real-time test control, variable inspection, and keyword retry capabilities.
 
-![rfdb Demo](https://via.placeholder.com/800x400.png?text=rfdb+Debugger+Screenshot)
+![rfdb Demo](https://github.com/suri-53/rfdb/blob/main/Screenshots/rfdbUI.png)
 
 ## 🚀 Features
 
