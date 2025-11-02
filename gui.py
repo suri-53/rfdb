@@ -22,7 +22,7 @@ class SimpleRetryGUI:
     MAX_LOG_LINES = 1000
     MAX_FAILURE_LOG_LINES = 500
     VARIABLE_REFRESH_DELAY_MS = 1000  # Increased from 300ms for VDI performance
-    DEBUGGER_VERSION = "1.5.1"
+    # DEBUGGER_VERSION = "1.5.1"
     
     def __init__(self, core):
         self.core = core
@@ -34,7 +34,7 @@ class SimpleRetryGUI:
         self._var_refresh_id = None  # Track variable refresh timer
 
         self.root = tk.Tk()
-        self.root.title(f"Robot Framework Debugger {self.DEBUGGER_VERSION}")
+        self.root.title(f"Robot Framework Debugger")
         self.root.geometry("900x700")
         self.root.minsize(850, 600)
         self.root.protocol("WM_DELETE_WINDOW", self._on_window_close)

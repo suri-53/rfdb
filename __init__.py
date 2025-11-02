@@ -14,12 +14,12 @@ Usage:
 
 Author: Suriya
 License: MIT
-Version: 2.0
+Version: 2.0.1
 """
 
 from .RobotRetrier import RobotFrameworkDebugger
 
-__version__ = "2.0"
+__version__ = "2.0.2"
 __author__ = "Suriya"
 __license__ = "MIT"
 

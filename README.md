@@ -6,7 +6,7 @@
 
 A powerful interactive debugger for Robot Framework with real-time test control, variable inspection, and keyword retry capabilities.
 
-![rfdb Demo](https://github.com/suri-53/rfdb/blob/main/Screenshots/rfdbUI.png)
+![rfdb Demo](https://raw.githubusercontent.com/suri-53/rfdb/main/Screenshots/rfdbUI.png)
 
 ## 🚀 Features
 
@@ -45,7 +45,7 @@ pip install rfdb
 
 ## 🎯 Quick Start
 
-### Method 1: As a Listener (Recommended)
+### 1: As a Listener
 
 Run your tests with rfdb as a listener:
 
@@ -59,27 +59,7 @@ Or with multiple listeners:
 robot --listener rfdb --listener OtherListener your_test.robot
 ```
 
-### Method 2: Import as Library
-
-Add to your test file:
-
-```robot
-*** Settings ***
-Library    rfdb
-
-*** Test Cases ***
-My Test Case
-    Log    This test will pause on failures
-    Should Be Equal    1    2    # Debugger will pause here
-```
-
-Then run:
-
-```bash
-robot your_test.robot
-```
-
-### 3. Debug Interactively
+### 2. Debug Interactively
 
 The debugger GUI opens automatically when a test fails:
 - Click **Continue** to proceed
@@ -267,7 +247,7 @@ MIT License - see LICENSE file for details
 
 - **PyPI**: https://pypi.org/project/rfdb/
 - **GitHub**: https://github.com/suri-53/rfdb
-- **Issues**: https://github.com/yourusername/rfdb/issues
+- **Issues**: https://github.com/suri-53/rfdb/issues
 - **Robot Framework**: https://robotframework.org/
 
 ## 📊 Version History
@@ -343,19 +323,14 @@ MIT License - see LICENSE file for details
 ## Usage
 
 ### Starting the Debugger
-```robot
-*** Settings ***
-Library    path/to/RobotFrameworkDebugger.py
 
-*** Test Cases ***
-My Test
-    Log    Test will pause at debugger
-```
+Run your tests with rfdb as a listener:
 
-Run your test:
 ```bash
-robot your_test.robot
+robot --listener rfdb your_test.robot
 ```
+
+The debugger GUI opens automatically when a test fails.
 
 ### Keyboard Shortcuts
 - **Ctrl+Q**: Emergency exit (force close debugger)
@@ -386,7 +361,7 @@ VARIABLE_REFRESH_DELAY_MS = 1000  # Variable refresh rate (ms)
 
 ### Debugger doesn't pause
 - Check that the library is imported in your test Settings
-- Verify Robot Framework version compatibility (v3+)
+- Verify Robot Framework version compatibility (v7.1.1+)
 
 ### Keywords not loading
 - Library loads lazily when first needed
@@ -425,5 +400,6 @@ VARIABLE_REFRESH_DELAY_MS = 1000  # Variable refresh rate (ms)
 For issues or questions:
 1. Check logs in failure log window
 2. Review call stack for execution context
+
 3. Verify library imports in test settings
 4. Check Robot Framework version compatibility
