@@ -26,12 +26,17 @@ __license__ = "MIT"
 # Expose at package level for --listener rfdb
 ROBOT_LISTENER_API_VERSION = 3
 
+# Create a single shared instance
+_instance = None
+
 def __getattr__(name):
     """
-    Delegate attribute access to RobotFrameworkDebugger instance.
+    Delegate attribute access to a single RobotFrameworkDebugger instance.
     This allows Robot Framework to use 'rfdb' directly as a listener.
     """
-    instance = RobotFrameworkDebugger()
-    return getattr(instance, name)
+    global _instance
+    if _instance is None:
+        _instance = RobotFrameworkDebugger()
+    return getattr(_instance, name)
 
 __all__ = ["RobotFrameworkDebugger"]
